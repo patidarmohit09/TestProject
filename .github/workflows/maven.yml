@@ -18,3 +18,9 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn test -file PracticeProject/pom.xml
+    - name: Deploy automation report
+      uses: actions/upload-artifact@v3
+        with:
+          name: TestExecutionReport.html
+          path: /reports/TestExecutionReport.html
+          retention-days: 2

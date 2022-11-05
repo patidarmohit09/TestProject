@@ -17,4 +17,4 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn install:install -file PracticeProject/pom.xml
+      run: mvn test:test -file PracticeProject/pom.xml

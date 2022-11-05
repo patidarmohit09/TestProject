@@ -10,4 +10,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Build with Maven
-      run: mvn test PracticeProject/pom.xml
+      run: mvn test --file *.pom

@@ -20,7 +20,7 @@ jobs:
       run: mvn test -file PracticeProject/pom.xml
     - name: Deploy automation report
       uses: actions/upload-artifact@v3
-        with:
-          name: TestExecutionReport.html
-          path: /reports/TestExecutionReport.html
-          retention-days: 2
+      with:
+        name: TestExecutionReport.html
+        path: /reports/TestExecutionReport.html
+        retention-days: 2

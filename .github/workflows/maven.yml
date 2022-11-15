@@ -5,9 +5,17 @@ name: Java CI with Maven
 on:
   workflow_dispatch:
     inputs:
-      name: 
+      env: 
         description: 'Environment Name'
         default: 'dev'
+        required: true
+      suite_name:
+        description: 'Suite Name'
+        default: 'smoke'
+        required: true
+      server:
+        description: 'Server Name'
+        default: 'azure'
         required: true
 permissions: write-all
 jobs:

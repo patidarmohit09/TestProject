@@ -30,7 +30,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: mvn test -Denv=${{github.event.inputs.name}},${{secrets.USERNAME}} -file PracticeProject/pom.xml
+      run: mvn test -Denv=${{github.event.inputs.env}},${{github.event.inputs.suite_name}},${{github.event.inputs.server}},${{secrets.USERNAME}} -file PracticeProject/pom.xml
     - name: Deploy automation report
       uses: actions/upload-artifact@v3
       with:

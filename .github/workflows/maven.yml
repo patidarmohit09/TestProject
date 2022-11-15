@@ -4,6 +4,11 @@ name: Java CI with Maven
 
 on:
   workflow_dispatch:
+    inputs:
+      name: 
+        description: 'Environment Name'
+        default: 'dev'
+        required: true
 permissions: write-all
 jobs:
   build:

@@ -11,13 +11,23 @@ import io.restassured.response.Response;
 
 public class AppTest
 {
+	ExtentReports reports = new ExtentReports(System.getProperty("user.dir")+"/reports/TestExecutionReport.html", true);
+	ExtentTest test;
 	@Test
     public void test()
     {
-		ExtentReports reports = new ExtentReports(System.getProperty("user.dir")+"/reports/TestExecutionReport.html", true);
-		ExtentTest test = reports.startTest("Sample Test");
+		test = reports.startTest("Sample Test");
 		Response response=RestAssured.given().baseUri("https://reqres.in/api/users?page=2").get();
 		test.log(LogStatus.INFO, response.asString());
+		reports.endTest(test);
+		reports.flush();
+    }
+	
+	@Test
+    public void test2()
+    {
+		test = reports.startTest("Sample Test2");
+		test.log(LogStatus.INFO, System.getProperty("env"));
 		reports.endTest(test);
 		reports.flush();
     }

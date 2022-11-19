@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download a single artifact
-      uses: actions/action-download-artifact@v2
+      uses: patidarmohit09/action-download-artifact@v2
       with:
         workflow: build_jar_file.yml
         run_id: 3502980828

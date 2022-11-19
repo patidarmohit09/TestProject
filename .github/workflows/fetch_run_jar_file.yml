@@ -27,5 +27,5 @@ jobs:
 
       with:
         name: Test-Jar
-        path: TestProject/actions/runs/3502980828
+        path: https://github.com/patidarmohit09/TestProject/actions/runs/3502980828
      

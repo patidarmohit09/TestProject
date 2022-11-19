@@ -32,7 +32,7 @@ jobs:
     - name: Build and package artifact
       run: mvn -file PracticeProject/pom.xml --batch-mode clean package -DskipTests
     - name: stage artifacts 
-      run: mkdir staging && cp target/*.jar staging
+      run: mkdir staging && cp target/*jar-with-dependencies.jar staging
     - name: Deploy artifact 
       uses: actions/upload-artifact@v3
       with:

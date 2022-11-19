@@ -32,7 +32,7 @@ jobs:
         path: TestProject/actions/runs/3502980828
         
     - name: Build with Maven
-      run: mvn test -Denv=${{github.event.inputs.env}},${{github.event.inputs.suite_name}},${{github.event.inputs.server}},${{secrets.USERNAME}} -jar TestProject/actions/runs/3502980828/PracticeProject-0.0.1-SNAPSHOT.jar
+      run: mvn test -Denv=${{github.event.inputs.env}},${{github.event.inputs.suite_name}},${{github.event.inputs.server}},${{secrets.USERNAME}} -file TestProject/actions/runs/3502980828/PracticeProject-0.0.1-SNAPSHOT.jar
     - name: Deploy automation report
       uses: actions/upload-artifact@v3
       with:

@@ -26,6 +26,10 @@ jobs:
       uses: actions/download-artifact@v3
 
       with:
+        workflow: build_jar_file.yml
+        run_id: 3502980828
+        repo: ${{ github.repository }}
         name: Test-Jar
-        path: https://github.com/patidarmohit09/TestProject/actions/runs/3502980828
+        path: TestProject/actions/runs/3502980828
+        
      

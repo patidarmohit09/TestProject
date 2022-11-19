@@ -31,4 +31,13 @@ jobs:
         name: Test-Jar
         path: TestProject/actions/runs/3502980828
         
+    - name: Build with Maven
+      run: mvn test -Denv=${{github.event.inputs.env}},${{github.event.inputs.suite_name}},${{github.event.inputs.server}},${{secrets.USERNAME}} -jar Test-Jar
+    - name: Deploy automation report
+      uses: actions/upload-artifact@v3
+      with:
+        name: TestExecutionReport.html
+        path: PracticeProject/reports/TestExecutionReport.html
+        retention-days: 2
+        
      

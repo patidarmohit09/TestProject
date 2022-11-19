@@ -1,6 +1,6 @@
 # This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
 
-name: Java CI with Maven
+name: build_jar_file
 
 on:
   workflow_dispatch:

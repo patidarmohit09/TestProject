@@ -29,11 +29,13 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn test -Denv=${{github.event.inputs.env}},${{github.event.inputs.suite_name}},${{github.event.inputs.server}},${{secrets.USERNAME}} -file PracticeProject/pom.xml
-    - name: Deploy automation report
+    - name: Build and package artifact
+      run: mvn --batch-mode clean package -DskipTests
+    - name: stage artifacts 
+      run: mkdir stageing && cp target/*.jar staging
+    - name: Deploy artifact 
       uses: actions/upload-artifact@v3
       with:
-        name: TestExecutionReport.html
-        path: PracticeProject/reports/TestExecutionReport.html
+        name: Test-Jar
+        path: staging
         retention-days: 2

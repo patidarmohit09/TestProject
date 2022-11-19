@@ -30,7 +30,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build and package artifact
-      run: mvn --batch-mode clean package -DskipTests
+      run: mvn -file PracticeProject/pom.xml --batch-mode clean package -DskipTests
     - name: stage artifacts 
       run: mkdir stageing && cp target/*.jar staging
     - name: Deploy artifact 

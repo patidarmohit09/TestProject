@@ -20,7 +20,7 @@ on:
 permissions: write-all
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - name: Download a single artifact
       uses: dawidd6/action-download-artifact@v2
@@ -29,10 +29,10 @@ jobs:
         run_id: 3502980828
         repo: ${{ github.repository }}
         name: Test-Jar
-        path: TestProject/actions/runs/3502980828
+        path: TestProject/actions/runs/3507999305
         
     - name: Build with Maven
-      run: mvn clean install test -Denv=${{github.event.inputs.env}},${{github.event.inputs.suite_name}},${{github.event.inputs.server}},${{secrets.USERNAME}} -file TestProject/actions/runs/3502980828/PracticeProject-0.0.1-SNAPSHOT.jar
+      run:  java -jar TestProject/actions/runs/3507999305/PracticeProject-0.0.1-SNAPSHOT.jar
     - name: Deploy automation report
       uses: actions/upload-artifact@v3
       with:
